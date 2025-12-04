@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utkarsh Bajaj | AI/ML Engineer</title>
+    <meta name="description" content="Portfolio of Utkarsh Bajaj - AI/ML Engineer, Photographer, and Marathon Runner.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">UB<span class="accent">.</span></div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">AI Work</a>
+            <a href="#passions" class="nav-link">Passions</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i data-lucide="menu"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+
+                <h1 class="hero-title">
+                    Architecting <span class="gradient-text">Intelligence</span>.<br>
+                    Capturing <span class="gradient-text-alt">Moments</span>.<br>
+                    Chasing <span class="gradient-text-fitness">Miles</span>.
+                </h1>
+                <p class="hero-subtitle">
+                    I'm Utkarsh, an AI/ML Engineer at Amazon specializing in Generative AI, LLMs, and MLOps.
+                    Bridging the gap between complex algorithms and human impact.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span>Scroll to explore</span>
+                    <i data-lucide="chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The <span class="accent">Triad</span></h2>
+                <p class="section-desc">Where logic meets creativity and endurance.</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card ai-card">
+                    <div class="card-icon"><i data-lucide="brain-circuit"></i></div>
+                    <h3>The Engineer</h3>
+                    <p>With 4+ years of experience, I build end-to-end AI systems. My focus is on Generative AI (RAG,
+                        Agents), MLOps, and scalable data pipelines.</p>
+                    <ul class="tech-stack-mini">
+                        <li>AWS Bedrock</li>
+                        <li>LangChain</li>
+                        <li>Python</li>
+                        <li>Spark</li>
+                    </ul>
+                </div>
+
+                <div class="about-card photo-card">
+                    <div class="card-icon"><i data-lucide="camera"></i></div>
+                    <h3>The Creator</h3>
+                    <p>Photography is my way of freezing time. From the streets of Toronto to landscapes, I capture
+                        stories through my lens.</p>
+                </div>
+
+                <div class="about-card fitness-card">
+                    <div class="card-icon"><i data-lucide="activity"></i></div>
+                    <h3>The Runner</h3>
+                    <p>Endurance is my discipline. I've conquered half marathons across the globe, proving that
+                        consistency beats intensity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section (AI Focus) -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Selected <span class="accent">Works</span></h2>
+                <p class="section-desc">Engineering intelligent solutions.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: AI Daily Post Generator -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project screenshots/Ai Daily Post Generator.png"
+                            alt="AI Daily Post Generator" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>GenAI</span>
+                        </div>
+                        <h3>AI Daily Post Generator</h3>
+                        <p>Automated daily social media posts via LLM with theme/sentiment-based curation and scheduled
+                            generation.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ubajaj1/AI-Daily-Post-Generator" target="_blank"
+                                class="link-btn"><i data-lucide="github"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Finny -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project screenshots/Finny.PNG" alt="Finny Forecasting Engine"
+                            class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span>LLM Agents</span>
+                            <span>Streamlit</span>
+                        </div>
+                        <h3>Finny (Forecasting Engine)</h3>
+                        <p>Launched an LLM-powered forecast fine-tuning recommendation engine, reducing manual analysis
+                            time by 70%.</p>
+                        <div class="project-links">
+                            <span class="link-btn"><i data-lucide="building"></i> Amazon</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 3: DataMind -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project screenshots/Datamind.PNG" alt="DataMind" class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span>GenAI</span>
+                            <span>RAG</span>
+                            <span>AWS</span>
+                        </div>
+                        <h3>DataMind</h3>
+                        <p>Architected an AWS Bedrock-based GenAI RAG platform, serving 51+ monthly active users and
+                            saving 600+ engineering hours annually.</p>
+                        <div class="project-links">
+                            <span class="link-btn"><i data-lucide="building"></i> Amazon</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 4: Fitness Tracker -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="assets/images/project screenshots/fitness_tracker.png" alt="Fitness Tracker"
+                            class="project-img">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span>Full Stack</span>
+                            <span>Data Viz</span>
+                        </div>
+                        <h3>Fitness Tracker</h3>
+                        <p>Full-stack Python fitness tracker with robust data processing, workout intensity
+                            classification, and interactive visualizations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Ubajaj1/fitness-tracker" target="_blank" class="link-btn"><i
+                                    data-lucide="github"></i> Code</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Upcoming Project -->
+            <div class="upcoming-project">
+                <div class="upcoming-content">
+                    <div class="badge-upcoming">Coming Early 2026</div>
+                    <h3>AI Calorie Tracker</h3>
+                    <p>Most trackers just log numbers. This one understands your biology. An intelligent nutrition
+                        companion that adapts to your metabolism and habits, powered by computer vision and adaptive
+                        algorithms.</p>
+                    <div class="store-badge">
+                        <i data-lucide="apple"></i> iOS App Store
+                    </div>
+                </div>
+                <div class="upcoming-image">
+                    <img src="assets/images/project screenshots/AI calorie tracker.png"
+                        alt="AI Calorie Tracker App Interface">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passions Section (Photography & Fitness) -->
+    <section id="passions" class="section dark-alt-bg">
+        <div class="container">
+            <div class="split-layout">
+                <!-- Photography Side -->
+                <div class="passion-block photography">
+                    <div class="block-header">
+                        <h2>Through the <span class="gradient-text-alt">Lens</span></h2>
+                        <p>Capturing the world, one frame at a time. <a
+                                href="https://photos.google.com/album/AF1QipPl7im7h8D27Uxw9sEFoFsXOW4wX1V_eUc8vCVS"
+                                target="_blank" class="text-link">View Gallery <i data-lucide="arrow-up-right"
+                                    style="width: 14px; height: 14px; display: inline;"></i></a></p>
+                    </div>
+                    <div class="photo-gallery">
+                        <div class="photo-item p1"></div>
+                        <div class="photo-item p2"></div>
+                        <div class="photo-item p3"></div>
+                        <div class="photo-item p4"></div>
+                    </div>
+                </div>
+
+                <!-- Fitness Side -->
+                <div class="passion-block fitness">
+                    <div class="block-header">
+                        <h2>Forged in <span class="gradient-text-fitness">Miles</span></h2>
+                        <p>Half Marathon Finisher: New Delhi • Toronto • San Diego • New York • Seattle</p>
+                    </div>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Major Cities</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">21.1</span>
+                            <span class="stat-label">KM / Race</span>
+                        </div>
+                        <div class="stat-item">
+                            <a href="https://strava.app.link/wY9V4pSLNYb" target="_blank"
+                                style="text-decoration: none; color: inherit;">
+                                <span class="stat-number"><i data-lucide="activity"></i></span>
+                                <span class="stat-label">Strava</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fitness-quote">
+                        "The only bad workout is the one that didn't happen."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="section-header">
+                    <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
+                    <p class="section-desc">Have a project in mind or want to discuss AI, photography, or training?</p>
+                </div>
+
+                <div class="contact-links">
+                    <a href="mailto:utkarshbajaj2401@gmail.com" class="contact-card">
+                        <i data-lucide="mail"></i>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/utkarsh-bajaj/" target="_blank" class="contact-card">
+                        <i data-lucide="linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/Ubajaj1" target="_blank" class="contact-card">
+                        <i data-lucide="github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </div>
+
+                <footer class="footer">
+                    <p>&copy; 2025 Utkarsh Bajaj. Built with <i data-lucide="heart" class="heart-icon"></i> and Code.
+                    </p>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

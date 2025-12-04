@@ -1,0 +1,26 @@
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Node (if you add dependencies later)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Secrets & Environment Variables (Critical for Public Repos)
+.env
+.env.local
+.env.*.local
+secrets.js
+secrets.json
+*.pem
+*.key
