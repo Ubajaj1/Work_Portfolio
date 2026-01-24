@@ -511,9 +511,10 @@ ul {
     gap: 16px;
 }
 
-/* Upcoming Project */
-.upcoming-project {
-    margin-top: 60px;
+/* Featured Project (Previously Upcoming) */
+.featured-project {
+    margin-top: 40px;
+    margin-bottom: 40px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 24px;
@@ -525,12 +526,12 @@ ul {
     overflow: hidden;
 }
 
-.upcoming-content {
+.featured-content {
     flex: 1;
     z-index: 2;
 }
 
-.badge-upcoming {
+.badge-featured {
     display: inline-block;
     padding: 6px 12px;
     background: rgba(99, 102, 241, 0.1);
@@ -544,7 +545,7 @@ ul {
     letter-spacing: 1px;
 }
 
-.upcoming-content h3 {
+.featured-content h3 {
     font-size: 32px;
     margin-bottom: 16px;
     background: linear-gradient(to right, #fff, #a5b4fc);
@@ -553,14 +554,14 @@ ul {
     -webkit-text-fill-color: transparent;
 }
 
-.upcoming-content p {
+.featured-content p {
     color: var(--text-muted);
     font-size: 16px;
     margin-bottom: 24px;
     max-width: 500px;
 }
 
-.store-badge {
+.store-badge, .project-link-badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -571,9 +572,16 @@ ul {
     font-size: 14px;
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
-.upcoming-image {
+.store-badge:hover, .project-link-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.featured-image {
     flex: 1;
     height: 300px;
     border-radius: 16px;
@@ -582,19 +590,19 @@ ul {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-.upcoming-image img {
+.featured-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 @media (max-width: 768px) {
-    .upcoming-project {
+    .featured-project {
         flex-direction: column;
         padding: 24px;
     }
 
-    .upcoming-image {
+    .featured-image {
         width: 100%;
         height: 200px;
     }

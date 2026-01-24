@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS App Preview - What Are We Building Today?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .device-frame {
+            width: 390px;
+            height: 844px;
+            background: #000;
+            border-radius: 55px;
+            padding: 12px;
+            box-shadow:
+                0 50px 100px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .device-frame::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 30px;
+            background: #000;
+            border-radius: 0 0 20px 20px;
+            z-index: 10;
+        }
+
+        .device-frame::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 6px;
+            background: #1c1c1e;
+            border-radius: 3px;
+            z-index: 11;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, #1c1c1e 0%, #2c2c2e 100%);
+            border-radius: 45px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .status-bar {
+            height: 54px;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            padding-top: 14px;
+        }
+
+        .time {
+            letter-spacing: -0.3px;
+        }
+
+        .status-icons {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .signal-icon,
+        .wifi-icon,
+        .battery-icon {
+            width: 18px;
+            height: 12px;
+        }
+
+        .app-content {
+            height: calc(100% - 54px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+        }
+
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            box-shadow:
+                0 20px 40px rgba(102, 126, 234, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .app-icon svg {
+            width: 70px;
+            height: 70px;
+            fill: #fff;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .main-text {
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .action-button {
+            margin-top: 40px;
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 28px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .action-button:active {
+            transform: translateY(0);
+        }
+
+        .decorative-circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            right: -100px;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+            animation: pulse 4s ease-in-out infinite 2s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 430px) {
+            .device-frame {
+                width: 100%;
+                max-width: 390px;
+                height: auto;
+                aspect-ratio: 390 / 844;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="device-frame">
+        <div class="screen">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <div class="time">9:41</div>
+                <div class="status-icons">
+                    <svg class="signal-icon" viewBox="0 0 18 12" fill="white">
+                        <rect x="0" y="8" width="3" height="4" rx="1" />
+                        <rect x="5" y="5" width="3" height="7" rx="1" />
+                        <rect x="10" y="2" width="3" height="10" rx="1" />
+                        <rect x="15" y="0" width="3" height="12" rx="1" />
+                    </svg>
+                    <svg class="wifi-icon" viewBox="0 0 18 12" fill="white">
+                        <path
+                            d="M9 12C9.82843 12 10.5 11.3284 10.5 10.5C10.5 9.67157 9.82843 9 9 9C8.17157 9 7.5 9.67157 7.5 10.5C7.5 11.3284 8.17157 12 9 12Z" />
+                        <path d="M4.5 7.5C6.98528 5.01472 11.0147 5.01472 13.5 7.5" />
+                        <path d="M1.5 4.5C5.47715 0.522847 12.5228 0.522847 16.5 4.5" />
+                    </svg>
+                    <svg class="battery-icon" viewBox="0 0 25 12" fill="white">
+                        <rect x="0" y="1" width="20" height="10" rx="2" stroke="white" stroke-width="1.5" fill="none" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" fill="white" />
+                        <rect x="21" y="4" width="2" height="4" rx="1" fill="white" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- App Content -->
+            <div class="app-content">
+                <div class="decorative-circles">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="app-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="white" fill-opacity="0.9" />
+                            <path d="M2 17L12 22L22 17" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                    <h1 class="main-text">What are we building today?</h1>
+                    <p class="subtitle">Let's ship daily</p>
+
+                    <button class="action-button" onclick="handleButtonClick()">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleButtonClick() {
+            const button = event.target;
+            button.textContent = 'Let\'s go! 🚀';
+
+            setTimeout(() => {
+                button.textContent = 'Get Started';
+            }, 2000);
+        }
+
+        // Update time to current time
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const timeString = `${hours}:${minutes.toString().padStart(2, '0')}`;
+            document.querySelector('.time').textContent = timeString;
+        }
+
+        updateTime();
+        setInterval(updateTime, 60000); // Update every minute
+    </script>
+</body>
+
+</html>
