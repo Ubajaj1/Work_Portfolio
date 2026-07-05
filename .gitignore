@@ -24,3 +24,4 @@ secrets.js
 secrets.json
 *.pem
 *.key
+.superpowers/
