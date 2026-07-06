@@ -148,9 +148,15 @@ right. 2px ink bottom border. Blocks separated by 2px ink rules; each block min-
 - Set rows are `<button>`-semantics (keyboard-expandable, `aria-expanded` on the row,
   `hidden` attribute on the collapsed reps panel so state is consistent for screen
   readers and keyboard users).
-- Color contrast: all accent-on-paper and accent-on-ink pairings checked ≥ 4.5:1 for
-  text-sized uses (ember/plum/green/gold on `#D1CACC` pass for bold ≥18px; body text
-  stays ink).
+- Color contrast: the raw accent hues (ember 3.15:1, plum 3.95:1, gold 2.24:1) only
+  clear WCAG AA at headline scale (large/bold text, ≥3:1) — they do **not** pass 4.5:1
+  and must not be used for small text. Green (5.06:1) is the exception and passes at
+  any size. For every ≤15px use — `.set-reps`, `.rep-item .n`, `.lede b`/`.f-ember`/
+  `.f-plum`, chip borders/text/fills, and the hover-flood backgrounds on `.set-row` /
+  `.accessory-row` — darker `--ember-text` / `--gold-text` / `--plum-text` tokens are
+  used instead, each verified ≥ 4.5:1 against `--paper` (and `--paper-dim`, where
+  `.rep-item .n` sits). Green sections reuse `--green` as their `--accent-text` since
+  it already clears 4.5:1. Body text stays ink.
 - Buddy is decorative: `aria-hidden="true"`.
 
 ## 8. Content placeholders (to be filled by Utkarsh later)

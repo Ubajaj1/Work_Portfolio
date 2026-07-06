@@ -9,6 +9,9 @@
     --plum: #7A4A9E;
     --green: #33582F;
     --green-light: #8FBF85;
+    --ember-text: #882A14;
+    --gold-text: #6F4F1B;
+    --plum-text: #6D428D;
     --buddy-reserve: 108px;
 }
 
@@ -69,11 +72,12 @@ section {
     border-bottom: 2px solid var(--ink);
     min-height: 90vh;
     --accent: var(--ink);
+    --accent-text: var(--ink);
 }
-section.s-strength { --accent: var(--ember); }
-section.s-comp { --accent: var(--gold); }
-section.s-skill { --accent: var(--plum); }
-section.s-cardio { --accent: var(--green); }
+section.s-strength { --accent: var(--ember); --accent-text: var(--ember-text); }
+section.s-comp { --accent: var(--gold); --accent-text: var(--gold-text); }
+section.s-skill { --accent: var(--plum); --accent-text: var(--plum-text); }
+section.s-cardio { --accent: var(--green); --accent-text: var(--green); }
 
 .block-label {
     display: inline-block; font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
@@ -81,18 +85,18 @@ section.s-cardio { --accent: var(--green); }
 }
 
 /* ============ Typography ============ */
-h1 {
+h1, section h2 {
     font-size: clamp(48px, 9vw, 130px);
     font-weight: 900; line-height: .92; letter-spacing: -.04em; text-transform: uppercase;
 }
-h1 .outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
-h1 .acc { color: var(--accent); }
-h1 .under {
+h1 .outline, section h2 .outline { color: transparent; -webkit-text-stroke: 2px var(--ink); }
+h1 .acc, section h2 .acc { color: var(--accent); }
+h1 .under, section h2 .under {
     text-decoration: underline; text-decoration-thickness: 6px;
     text-underline-offset: 10px; text-decoration-color: var(--accent);
 }
-h1 .tri-under { position: relative; }
-h1 .tri-under::after {
+h1 .tri-under, section h2 .tri-under { position: relative; }
+h1 .tri-under::after, section h2 .tri-under::after {
     content: ""; position: absolute; left: 2%; right: 2%; bottom: -.06em; height: .07em;
     background: linear-gradient(90deg, var(--ember) 0 33.4%, var(--plum) 33.4% 66.7%, var(--green) 66.7% 100%);
 }
@@ -101,9 +105,9 @@ h1 .tri-under::after {
 .dot-green { color: var(--green); }
 
 .lede { max-width: 460px; font-size: 15px; line-height: 1.6; margin-top: 28px; color: #3a3436; }
-.lede b { color: var(--accent); }
-.lede .f-ember { color: var(--ember); font-weight: 700; }
-.lede .f-plum { color: var(--plum); font-weight: 700; }
+.lede b { color: var(--accent-text); }
+.lede .f-ember { color: var(--ember-text); font-weight: 700; }
+.lede .f-plum { color: var(--plum-text); font-weight: 700; }
 .lede .f-green { color: var(--green); font-weight: 700; }
 
 /* ============ Strength sets ============ */
@@ -115,17 +119,17 @@ h1 .tri-under::after {
     background: none; color: inherit; font: inherit; text-align: left;
     cursor: pointer; transition: all .2s;
 }
-.set-row:hover, .set-row:focus-visible { background: var(--accent); color: var(--paper); padding-left: 12px; }
+.set-row:hover, .set-row:focus-visible { background: var(--accent-text); color: var(--paper); padding-left: 12px; }
 .set-row:hover .set-reps, .set-row:focus-visible .set-reps { color: var(--paper); }
 .set-num { font-size: 12px; font-weight: 900; letter-spacing: 1px; }
 .set-name { font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
 .set-meta { font-size: 11px; opacity: .65; text-transform: uppercase; letter-spacing: 1px; }
-.set-reps { font-size: 11px; font-weight: 700; text-align: right; color: var(--accent); }
+.set-reps { font-size: 11px; font-weight: 700; text-align: right; color: var(--accent-text); }
 
 .reps-detail { padding: 24px 0 32px 120px; border-bottom: 1px solid var(--ink); background: var(--paper-dim); }
 .reps-detail[hidden] { display: none; }
 .rep-item { display: flex; gap: 14px; font-size: 13px; padding: 7px 0; align-items: baseline; }
-.rep-item .n { font-weight: 900; font-size: 12px; min-width: 52px; color: var(--accent); }
+.rep-item .n { font-weight: 900; font-size: 12px; min-width: 52px; color: var(--accent-text); }
 
 /* ============ Accessory work ============ */
 .accessory { margin-top: 64px; }
@@ -137,7 +141,7 @@ h1 .tri-under::after {
 }
 .accessory-row span:nth-child(2) { opacity: .6; font-weight: 400; }
 .accessory-row span:last-child { text-align: right; }
-.accessory-row:hover { background: var(--accent); color: var(--paper); padding-left: 12px; }
+.accessory-row:hover { background: var(--accent-text); color: var(--paper); padding-left: 12px; }
 
 /* ============ Record board ============ */
 .board { margin-top: 48px; border-top: 2px solid var(--ink); }
@@ -151,10 +155,11 @@ h1 .tri-under::after {
 .b-entry { font-size: 13px; opacity: .8; }
 .chip {
     justify-self: end; font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-    text-transform: uppercase; padding: 6px 12px; border: 2px solid var(--accent); text-align: center;
+    text-transform: uppercase; padding: 6px 12px; border: 2px solid var(--accent-text); text-align: center;
+    color: var(--accent-text);
 }
-.chip.done { background: var(--accent); color: var(--paper); }
-.chip.review { color: var(--accent); animation: chip-pulse 2s ease-in-out infinite; }
+.chip.done { background: var(--accent-text); color: var(--paper); }
+.chip.review { color: var(--accent-text); animation: chip-pulse 2s ease-in-out infinite; }
 .chip.up { border-style: dashed; color: var(--ink); }
 @keyframes chip-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
 
@@ -169,8 +174,8 @@ h1 .tri-under::after {
 
 /* ============ Inverted (cardio) ============ */
 section.invert { background: var(--ink); color: var(--paper); }
-section.invert h1 .outline { -webkit-text-stroke: 2px var(--paper); }
-section.invert h1 .acc { color: var(--green-light); }
+section.invert h1 .outline, section.invert h2 .outline { -webkit-text-stroke: 2px var(--paper); }
+section.invert h1 .acc, section.invert h2 .acc { color: var(--green-light); }
 section.invert .block-label { background: var(--paper); color: var(--ink); }
 section.invert .lede { color: #a89fa3; }
 

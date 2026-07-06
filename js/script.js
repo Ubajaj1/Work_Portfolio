@@ -22,8 +22,11 @@
         poses.forEach(function (c) { buddy.classList.remove(c); });
         buddy.classList.add(pose);
         tag.textContent = section.dataset.tag;
-        tag.style.background = section.dataset.accent;
-        repCount.style.color = section.dataset.accent;
+        // Tag background and rep counter carry paper-colored text, so they use the
+        // darker AA-safe accent-text token. The HUD bar is decorative (aria-hidden)
+        // and stays on the brighter data-accent for visual consistency with headlines.
+        tag.style.background = section.dataset.accentText;
+        repCount.style.color = section.dataset.accentText;
         pbar.style.background = section.dataset.accent;
 
         clearInterval(repTimer);
