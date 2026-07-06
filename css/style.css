@@ -187,3 +187,86 @@ section.invert .lede { color: #a89fa3; }
 .cooldown-links a:hover { background: var(--ink); color: var(--paper); }
 
 .footer { margin-top: 60px; font-size: 11px; opacity: .6; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ============ Training buddy ============ */
+.buddy-track { position: fixed; right: 14px; top: 0; bottom: 0; width: 78px; z-index: 40; pointer-events: none; }
+.buddy {
+    position: absolute; right: 0; width: 78px; text-align: center;
+    background: var(--paper); border: 2px solid var(--ink);
+    padding: 6px 4px 4px;
+    transition: top .15s linear;
+}
+.buddy svg { width: 52px; height: 76px; overflow: visible; transition: transform .4s; }
+.buddy .tag {
+    font-size: 8px; letter-spacing: 1px; text-transform: uppercase;
+    background: var(--ink); color: var(--paper); padding: 3px 4px; margin-top: 3px;
+    display: block; white-space: nowrap; overflow: hidden; transition: background .4s;
+}
+.buddy .reps { font-size: 15px; font-weight: 900; color: var(--ink); height: 18px; transition: color .4s; }
+
+.buddy svg * { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; fill: none; }
+.buddy svg .head { fill: var(--ink); }
+.buddy svg g, .buddy svg line, .buddy svg circle { transform-box: view-box; transition: transform .3s; }
+.larm, .rarm { transform-origin: 50px 42px; }
+.lleg, .rleg { transform-origin: 50px 78px; }
+.lshin, .rshin { transform-origin: 50px 96px; }
+.body-g { transform-origin: 50px 78px; }
+
+/* WARM-UP: jumping jacks */
+@keyframes jj-body { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes jj-lleg { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(32deg); } }
+@keyframes jj-rleg { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-32deg); } }
+@keyframes jj-larm { 0%, 100% { transform: rotate(15deg); } 50% { transform: rotate(165deg); } }
+@keyframes jj-rarm { 0%, 100% { transform: rotate(-15deg); } 50% { transform: rotate(-165deg); } }
+.pose-warmup .body-g { animation: jj-body .7s ease-in-out infinite; }
+.pose-warmup .lleg { animation: jj-lleg .7s ease-in-out infinite; }
+.pose-warmup .rleg { animation: jj-rleg .7s ease-in-out infinite; }
+.pose-warmup .larm { animation: jj-larm .7s ease-in-out infinite; }
+.pose-warmup .rarm { animation: jj-rarm .7s ease-in-out infinite; }
+
+/* STRENGTH: side-view squat */
+@keyframes sq-body { 0%, 100% { transform: translateY(0); } 45%, 60% { transform: translateY(15px); } }
+@keyframes sq-thigh { 0%, 100% { transform: rotate(0); } 45%, 60% { transform: rotate(-72deg); } }
+@keyframes sq-shin { 0%, 100% { transform: rotate(0); } 45%, 60% { transform: rotate(72deg); } }
+@keyframes sq-arm { 0%, 100% { transform: rotate(-8deg); } 45%, 60% { transform: rotate(-88deg); } }
+.pose-squat .body-g { animation: sq-body 1.6s ease-in-out infinite; }
+.pose-squat .lleg, .pose-squat .rleg { animation: sq-thigh 1.6s ease-in-out infinite; }
+.pose-squat .lshin, .pose-squat .rshin { animation: sq-shin 1.6s ease-in-out infinite; }
+.pose-squat .larm, .pose-squat .rarm { animation: sq-arm 1.6s ease-in-out infinite; }
+
+/* COMPETITION: push-ups (figure rotates to plank, head right) */
+.pose-pushup svg { transform: rotate(90deg); }
+@keyframes pu-body { 0%, 100% { transform: translateX(4px); } 50% { transform: translateX(16px); } }
+@keyframes pu-arm { 0%, 100% { transform: rotate(-88deg); } 50% { transform: rotate(-45deg); } }
+.pose-pushup .body-g { animation: pu-body 1.2s ease-in-out infinite; }
+.pose-pushup .larm, .pose-pushup .rarm { animation: pu-arm 1.2s ease-in-out infinite; }
+.pose-pushup .lleg, .pose-pushup .rleg { transform: rotate(4deg); }
+
+/* SKILL WORK: overhead press */
+@keyframes press-l { 0%, 100% { transform: rotate(30deg); } 50% { transform: rotate(160deg); } }
+@keyframes press-r { 0%, 100% { transform: rotate(-30deg); } 50% { transform: rotate(-160deg); } }
+.pose-press .larm { animation: press-l 1.1s ease-in-out infinite; }
+.pose-press .rarm { animation: press-r 1.1s ease-in-out infinite; }
+
+/* CARDIO: run with knee drive */
+@keyframes run-lleg { 0%, 100% { transform: rotate(42deg); } 50% { transform: rotate(-30deg); } }
+@keyframes run-rleg { 0%, 100% { transform: rotate(-30deg); } 50% { transform: rotate(42deg); } }
+@keyframes run-lshin { 0%, 100% { transform: rotate(18deg); } 50% { transform: rotate(55deg); } }
+@keyframes run-rshin { 0%, 100% { transform: rotate(55deg); } 50% { transform: rotate(18deg); } }
+@keyframes run-larm { 0%, 100% { transform: rotate(-45deg); } 50% { transform: rotate(45deg); } }
+@keyframes run-rarm { 0%, 100% { transform: rotate(45deg); } 50% { transform: rotate(-45deg); } }
+@keyframes run-bob { 0%, 50%, 100% { transform: translateY(2px); } 25%, 75% { transform: translateY(-4px); } }
+.pose-run .body-g { animation: run-bob .5s linear infinite; }
+.pose-run .lleg { animation: run-lleg .5s linear infinite; }
+.pose-run .rleg { animation: run-rleg .5s linear infinite; }
+.pose-run .lshin { animation: run-lshin .5s linear infinite; }
+.pose-run .rshin { animation: run-rshin .5s linear infinite; }
+.pose-run .larm { animation: run-larm .5s linear infinite; }
+.pose-run .rarm { animation: run-rarm .5s linear infinite; }
+
+/* COOL-DOWN: stretch */
+@keyframes stretch-body { 0%, 100% { transform: rotate(0); } 50% { transform: rotate(-16deg); } }
+@keyframes stretch-arm { 0%, 100% { transform: rotate(170deg); } 50% { transform: rotate(205deg); } }
+.pose-stretch .body-g { animation: stretch-body 3.2s ease-in-out infinite; }
+.pose-stretch .larm { animation: stretch-arm 3.2s ease-in-out infinite; }
+.pose-stretch .rarm { transform: rotate(-15deg); }
