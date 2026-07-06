@@ -1,332 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utkarsh Bajaj | AI/ML Engineer</title>
-    <meta name="description" content="Portfolio of Utkarsh Bajaj - AI/ML Engineer, Photographer, and Marathon Runner.">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- CSS -->
+    <title>Utkarsh Bajaj | AI/ML Engineer — Training Log</title>
+    <meta name="description" content="Portfolio of Utkarsh Bajaj — AI/ML Engineer, researcher, photographer, and half-marathon runner. One workout session: six blocks.">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">UB<span class="accent">.</span></div>
-        <div class="nav-links">
-            <a href="#home" class="nav-link">Home</a>
-            <a href="#about" class="nav-link">About</a>
-            <a href="#projects" class="nav-link">AI Work</a>
-            <a href="#passions" class="nav-link">Passions</a>
-            <a href="#contact" class="nav-link">Contact</a>
+    <!-- Session progress HUD -->
+    <div class="hud" aria-hidden="true">
+        Session progress <span id="pct">0%</span>
+        <div class="bar"><i id="pbar"></i></div>
+    </div>
+
+    <!-- Training buddy -->
+    <div class="buddy-track" aria-hidden="true">
+        <div class="buddy pose-warmup" id="buddy">
+            <div class="reps" id="repCount"></div>
+            <svg viewBox="0 0 100 140">
+                <g class="body-g">
+                    <circle class="head" cx="50" cy="22" r="9"/>
+                    <line x1="50" y1="31" x2="50" y2="78"/>
+                    <line class="larm" x1="50" y1="42" x2="50" y2="70"/>
+                    <line class="rarm" x1="50" y1="42" x2="50" y2="70"/>
+                    <g class="lleg">
+                        <line x1="50" y1="78" x2="50" y2="96"/>
+                        <g class="lshin"><line x1="50" y1="96" x2="50" y2="114"/></g>
+                    </g>
+                    <g class="rleg">
+                        <line x1="50" y1="78" x2="50" y2="96"/>
+                        <g class="rshin"><line x1="50" y1="96" x2="50" y2="114"/></g>
+                    </g>
+                </g>
+            </svg>
+            <span class="tag" id="buddyTag">WARM-UP</span>
         </div>
-        <div class="mobile-menu-btn">
-            <i data-lucide="menu"></i>
-        </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-bg"></div>
-        <div class="container">
-            <div class="hero-content">
+    <header class="top">
+        <div class="logo">UB. TRAINING LOG</div>
+        <div class="session-meta">Session 2026-07 &nbsp;·&nbsp; 6 blocks &nbsp;·&nbsp; scroll to begin</div>
+        <button class="index-toggle" id="indexToggle" aria-expanded="false" aria-controls="indexMenu">Index</button>
+        <nav class="index-menu" id="indexMenu" hidden>
+            <a href="#warmup">01 — Warm-up</a>
+            <a href="#strength">02 — Strength · AI Work</a>
+            <a href="#competition">03 — Competition · Research</a>
+            <a href="#skill">04 — Skill Work · Photography</a>
+            <a href="#cardio">05 — Cardio · Running</a>
+            <a href="#cooldown">06 — Cool-down · Contact</a>
+        </nav>
+    </header>
 
-                <h1 class="hero-title">
-                    Architecting <span class="gradient-text">Intelligence</span>.<br>
-                    Capturing <span class="gradient-text-alt">Moments</span>.<br>
-                    Chasing <span class="gradient-text-fitness">Miles</span>.
-                </h1>
-                <p class="hero-subtitle">
-                    I'm Utkarsh, an AI/ML Engineer at Amazon specializing in Generative AI, LLMs, and MLOps.
-                    Bridging the gap between complex algorithms and human impact.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Talk</a>
-                </div>
+    <!-- BLOCK 01: WARM-UP / HERO -->
+    <section id="warmup" data-pose="pose-warmup" data-tag="WARM-UP · JACKS" data-accent="#0F0F0F">
+        <div class="block-label">Block 01 — Warm-up · 2 min easy</div>
+        <h1>Every<br><span class="outline">discipline</span><br>is a <span class="tri-under">workout</span><span class="dot-ember">.</span></h1>
+        <p class="lede">I'm Utkarsh — an AI/ML engineer at Amazon who <span class="f-ember">trains models</span>, <span class="f-plum">frames photographs</span>, and <span class="f-green">runs half marathons</span>. Same method everywhere: show up, do the reps, get stronger. This is my training log.</p>
+    </section>
 
-                <div class="scroll-indicator">
-                    <span>Scroll to explore</span>
-                    <i data-lucide="chevron-down"></i>
-                </div>
+    <!-- BLOCK 02: STRENGTH = AI WORK -->
+    <section id="strength" class="s-strength" data-pose="pose-squat" data-tag="SQUATS · AI WORK" data-accent="#C73E1D" data-reps="true" data-tempo="1600">
+        <div class="block-label">Block 02 — Strength · AI Engineering — 6 sets</div>
+        <h1>Heavy<br><span class="acc">compound</span><br>work<span class="outline">.</span></h1>
+        <p class="lede">The big lifts. Each <b>set</b> is a project — open one and the <b>reps</b> are the deep-dive: problem, idea, build, result.</p>
+
+        <div class="sets">
+            <button class="set-row" aria-expanded="false" aria-controls="reps-greenpes">
+                <span class="set-num">SET 01</span>
+                <span class="set-name">GreenPES</span>
+                <span class="set-meta">Open source · Sustainable LLMs</span>
+                <span class="set-reps">5 reps ↓</span>
+            </button>
+            <div class="reps-detail" id="reps-greenpes" hidden>
+                <div class="rep-item"><span class="n">REP 1</span> The problem: LLM deployments waste tokens, cost, and carbon.</div>
+                <div class="rep-item"><span class="n">REP 2</span> The idea: the first standardized metric for sustainable LLM deployment.</div>
+                <div class="rep-item"><span class="n">REP 3</span> The build: an optimizer balancing response quality against token efficiency.</div>
+                <div class="rep-item"><span class="n">REP 4</span> The result: lower compute cost and carbon footprint without sacrificing performance.</div>
+                <div class="rep-item"><span class="n">REP 5</span> <a href="https://github.com/Ubajaj1/GreenPES" target="_blank" rel="noopener">View on GitHub ↗</a></div>
             </div>
+
+            <button class="set-row" aria-expanded="false" aria-controls="reps-datascore">
+                <span class="set-num">SET 02</span>
+                <span class="set-name">DataScore</span>
+                <span class="set-meta">Open source · Data quality for fine-tuning</span>
+                <span class="set-reps">5 reps ↓</span>
+            </button>
+            <div class="reps-detail" id="reps-datascore" hidden>
+                <div class="rep-item"><span class="n">REP 1</span> The problem: teams discover bad training data only after an expensive fine-tune.</div>
+                <div class="rep-item"><span class="n">REP 2</span> The idea: score dataset quality before training and predict downstream performance.</div>
+                <div class="rep-item"><span class="n">REP 3</span> The build: a predictive data-quality framework for LLM fine-tuning datasets.</div>
+                <div class="rep-item"><span class="n">REP 4</span> The result: targeted data curation for optimal fine-tuning outcomes.</div>
+                <div class="rep-item"><span class="n">REP 5</span> <a href="https://github.com/Ubajaj1/DataScore" target="_blank" rel="noopener">View on GitHub ↗</a></div>
+            </div>
+
+            <button class="set-row" aria-expanded="false" aria-controls="reps-pythia">
+                <span class="set-num">SET 03</span>
+                <span class="set-name">Pythia</span>
+                <span class="set-meta">Presented @ AI Tinkerers Toronto</span>
+                <span class="set-reps">3 reps ↓</span>
+            </button>
+            <div class="reps-detail" id="reps-pythia" hidden>
+                <div class="rep-item"><span class="n">REP 1</span> [placeholder — what Pythia does, one sentence]</div>
+                <div class="rep-item"><span class="n">REP 2</span> [placeholder — how it works / what was demoed]</div>
+                <div class="rep-item"><span class="n">REP 3</span> [placeholder — link]</div>
+            </div>
+
+            <button class="set-row" aria-expanded="false" aria-controls="reps-inputguard">
+                <span class="set-num">SET 04</span>
+                <span class="set-name">InputGuard</span>
+                <span class="set-meta">Heading to INFORMS 2026</span>
+                <span class="set-reps">3 reps ↓</span>
+            </button>
+            <div class="reps-detail" id="reps-inputguard" hidden>
+                <div class="rep-item"><span class="n">REP 1</span> [placeholder — what InputGuard does, one sentence]</div>
+                <div class="rep-item"><span class="n">REP 2</span> [placeholder — approach / result]</div>
+                <div class="rep-item"><span class="n">REP 3</span> [placeholder — link]</div>
+            </div>
+
+            <button class="set-row" aria-expanded="false" aria-controls="reps-datamind">
+                <span class="set-num">SET 05</span>
+                <span class="set-name">DataMind</span>
+                <span class="set-meta">Amazon · GenAI RAG · 600+ hrs saved/yr</span>
+                <span class="set-reps">4 reps ↓</span>
+            </button>
+            <div class="reps-detail" id="reps-datamind" hidden>
+                <div class="rep-item"><span class="n">REP 1</span> The problem: engineers burned hours hunting internal data answers.</div>
+                <div class="rep-item"><span class="n">REP 2</span> The build: an AWS Bedrock-based GenAI RAG platform.</div>
+                <div class="rep-item"><span class="n">REP 3</span> The result: 51+ monthly active users, 600+ engineering hours saved annually.</div>
+                <div class="rep-item"><span class="n">REP 4</span> Internal tool @ Amazon — no public link.</div>
+            </div>
+
+            <button class="set-row" aria-expanded="false" aria-controls="reps-finny">
+                <span class="set-num">SET 06</span>
+                <span class="set-name">Finny</span>
+                <span class="set-meta">Amazon · LLM agents · ICLR Workshop '26</span>
+                <span class="set-reps">4 reps ↓</span>
+            </button>
+            <div class="reps-detail" id="reps-finny" hidden>
+                <div class="rep-item"><span class="n">REP 1</span> The build: an LLM-powered forecast fine-tuning recommendation engine.</div>
+                <div class="rep-item"><span class="n">REP 2</span> The result: manual analysis time down 70%, interactive Streamlit dashboarding.</div>
+                <div class="rep-item"><span class="n">REP 3</span> Published at ICLR Workshop 2026. [placeholder — paper link]</div>
+                <div class="rep-item"><span class="n">REP 4</span> Internal tool @ Amazon.</div>
+            </div>
+        </div>
+
+        <div class="accessory">
+            <div class="block-label">Accessory work</div>
+            <a class="accessory-row" href="https://github.com/Ubajaj1/AI-Daily-Post-Generator" target="_blank" rel="noopener">
+                <span>AI Daily Post Generator</span><span>Python · GenAI</span><span>GitHub ↗</span>
+            </a>
+            <a class="accessory-row" href="https://github.com/Ubajaj1/fitness-tracker" target="_blank" rel="noopener">
+                <span>Fitness Tracker</span><span>Full stack · Data viz</span><span>GitHub ↗</span>
+            </a>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">The <span class="accent">Triad</span></h2>
-                <p class="section-desc">Where logic meets creativity and endurance.</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-card ai-card">
-                    <div class="card-icon"><i data-lucide="brain-circuit"></i></div>
-                    <h3>The Engineer</h3>
-                    <p>With 4+ years of experience, I build end-to-end AI systems. My focus is on Generative AI (RAG,
-                        Agents), MLOps, and scalable data pipelines.</p>
-                    <ul class="tech-stack-mini">
-                        <li>AWS Bedrock</li>
-                        <li>LangChain</li>
-                        <li>Python</li>
-                        <li>Spark</li>
-                    </ul>
-                </div>
-
-                <div class="about-card photo-card">
-                    <div class="card-icon"><i data-lucide="camera"></i></div>
-                    <h3>The Creator</h3>
-                    <p>Photography is my way of freezing time. From the streets of Toronto to landscapes, I capture
-                        stories through my lens.</p>
-                </div>
-
-                <div class="about-card fitness-card">
-                    <div class="card-icon"><i data-lucide="activity"></i></div>
-                    <h3>The Runner</h3>
-                    <p>Endurance is my discipline. I've conquered half marathons across the globe, proving that
-                        consistency beats intensity.</p>
-                </div>
-            </div>
+    <!-- BLOCK 03: COMPETITION = RESEARCH SEASON -->
+    <section id="competition" class="s-comp" data-pose="pose-pushup" data-tag="PUSH-UPS · RESEARCH" data-accent="#B07D2B" data-reps="true" data-tempo="1200">
+        <div class="block-label">Block 03 — Competition · Research Season 2026</div>
+        <h1>The record<br><span class="acc">board</span><span class="outline">.</span></h1>
+        <p class="lede">Every paper is a race entered: some finished, some still on course, some on the start line.</p>
+        <div class="board">
+            <a class="board-row" href="#" target="_blank" rel="noopener">
+                <span class="b-event">ICLR Workshop '26</span>
+                <span class="b-entry">Finny — LLM-powered forecast fine-tuning [placeholder — paper title/link]</span>
+                <span class="chip done">Published ✓</span>
+            </a>
+            <a class="board-row" href="#" target="_blank" rel="noopener">
+                <span class="b-event">AI Tinkerers Toronto</span>
+                <span class="b-entry">Pythia — [placeholder one-liner]</span>
+                <span class="chip done">Presented ✓</span>
+            </a>
+            <a class="board-row" href="#" target="_blank" rel="noopener">
+                <span class="b-event">ACML 2026</span>
+                <span class="b-entry">Prompt Sensitivity Evaluation Methods — [placeholder title]</span>
+                <span class="chip review">Under review</span>
+            </a>
+            <a class="board-row" href="#" target="_blank" rel="noopener">
+                <span class="b-event">ICTAI 2026</span>
+                <span class="b-entry">LLM Leaderboard &amp; Benchmark Analysis — [placeholder]</span>
+                <span class="chip review">Under review</span>
+            </a>
+            <a class="board-row" href="#" target="_blank" rel="noopener">
+                <span class="b-event">INFORMS 2026</span>
+                <span class="b-entry">InputGuard — [placeholder one-liner]</span>
+                <span class="chip up">Upcoming talk</span>
+            </a>
         </div>
     </section>
 
-    <!-- Projects Section (AI Focus) -->
-    <section id="projects" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Selected <span class="accent">Works</span></h2>
-                <p class="section-desc">Engineering intelligent solutions.</p>
-            </div>
-
-            <!-- Featured Projects (Large Cards) -->
-            <div class="featured-projects-container">
-
-                <!-- Project 1: GreenPES -->
-                <div class="featured-project">
-                    <div class="featured-content">
-                        <div class="badge-featured">Open Source • WIP</div>
-                        <h3>GreenPES</h3>
-                        <p>The first standardized metric and optimizer for sustainable LLM deployment. GreenPES balances
-                            response quality with token efficiency to reduce computational costs and carbon footprint
-                            without sacrificing performance.</p>
-                        <a href="https://github.com/Ubajaj1/GreenPES" target="_blank" class="project-link-badge">
-                            <i data-lucide="github"></i> View Code
-                        </a>
-                    </div>
-                    <div class="featured-image">
-                        <img src="assets/images/project screenshots/greenpes_banner.png" alt="GreenPES Visualization">
-                    </div>
-                </div>
-
-                <!-- Project 2: DataScore -->
-                <div class="featured-project">
-                    <div class="featured-content">
-                        <div class="badge-featured">Open Source • WIP</div>
-                        <h3>DataScore</h3>
-                        <p>A predictive data quality framework for LLM fine-tuning datasets. DataScore evaluates
-                            training data BEFORE fine-tuning, predicting downstream model performance and enabling
-                            targeted data curation for optimal results.</p>
-                        <a href="https://github.com/Ubajaj1/DataScore" target="_blank" class="project-link-badge">
-                            <i data-lucide="github"></i> View Code
-                        </a>
-                    </div>
-                    <div class="featured-image">
-                        <img src="assets/images/project screenshots/datascore_banner.png" alt="DataScore Visualization">
-                    </div>
-                </div>
-
-                <!-- Project 3: Finny -->
-                <div class="featured-project">
-                    <div class="featured-content">
-                        <div class="badge-featured">Amazon • LLM Agents</div>
-                        <h3>Finny</h3>
-                        <p>Launched an LLM-powered forecast fine-tuning recommendation engine, reducing manual analysis
-                            time by 70%. Integrated with Streamlit for interactive dashboarding.</p>
-                        <div class="store-badge">
-                            <i data-lucide="building"></i> Internal Tool
-                        </div>
-                    </div>
-                    <div class="featured-image">
-                        <img src="assets/images/project screenshots/Finny.PNG" alt="Finny Forecasting Engine">
-                    </div>
-                </div>
-
-                <!-- Project 4: DataMind -->
-                <div class="featured-project">
-                    <div class="featured-content">
-                        <div class="badge-featured">Amazon • GenAI RAG</div>
-                        <h3>DataMind</h3>
-                        <p>Architected an AWS Bedrock-based GenAI RAG platform, serving 51+ monthly active users and
-                            saving 600+ engineering hours annually.</p>
-                        <div class="store-badge">
-                            <i data-lucide="building"></i> Internal Tool
-                        </div>
-                    </div>
-                    <div class="featured-image">
-                        <img src="assets/images/project screenshots/Datamind.PNG" alt="DataMind">
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Other Notable Projects -->
-            <div class="section-header" style="margin-top: 80px; margin-bottom: 40px;">
-                <h3 class="section-title" style="font-size: 32px;">Other <span class="accent">Notable Projects</span>
-                </h3>
-            </div>
-
-            <div class="projects-grid">
-                <!-- AI Daily Post Generator -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project screenshots/Ai Daily Post Generator.png"
-                            alt="AI Daily Post Generator" class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span>Python</span>
-                            <span>GenAI</span>
-                        </div>
-                        <h3>AI Daily Post Generator</h3>
-                        <p>Automated daily social media posts via LLM with theme/sentiment-based curation and scheduled
-                            generation.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Ubajaj1/AI-Daily-Post-Generator" target="_blank"
-                                class="link-btn"><i data-lucide="github"></i> Code</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Fitness Tracker -->
-                <article class="project-card">
-                    <div class="project-image">
-                        <img src="assets/images/project screenshots/fitness_tracker.png" alt="Fitness Tracker"
-                            class="project-img">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span>Full Stack</span>
-                            <span>Data Viz</span>
-                        </div>
-                        <h3>Fitness Tracker</h3>
-                        <p>Full-stack Python fitness tracker with robust data processing, workout intensity
-                            classification, and interactive visualizations.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/Ubajaj1/fitness-tracker" target="_blank" class="link-btn"><i
-                                    data-lucide="github"></i> Code</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
+    <!-- BLOCK 04: SKILL WORK = PHOTOGRAPHY -->
+    <section id="skill" class="s-skill" data-pose="pose-press" data-tag="SKILL WORK · LENS" data-accent="#7A4A9E">
+        <div class="block-label">Block 04 — Skill work · Photography</div>
+        <h1>Technique<span class="acc">,</span><br>not just<br><span class="acc">strength</span>.</h1>
+        <p class="lede">Precision work. <b>Composition is form</b> — you don't muscle a photograph, you practice it. <a href="https://photos.google.com/album/AF1QipPl7im7h8D27Uxw9sEFoFsXOW4wX1V_eUc8vCVS" target="_blank" rel="noopener">Full gallery ↗</a></p>
+        <div class="photo-grid">
+            <a href="https://photos.google.com/album/AF1QipPl7im7h8D27Uxw9sEFoFsXOW4wX1V_eUc8vCVS" target="_blank" rel="noopener"><img src="assets/images/photographs/IMG_3695.jpg" alt="Photograph by Utkarsh Bajaj"></a>
+            <a href="https://photos.google.com/album/AF1QipPl7im7h8D27Uxw9sEFoFsXOW4wX1V_eUc8vCVS" target="_blank" rel="noopener"><img src="assets/images/photographs/IMG_3696.jpg" alt="Photograph by Utkarsh Bajaj"></a>
+            <a href="https://photos.google.com/album/AF1QipPl7im7h8D27Uxw9sEFoFsXOW4wX1V_eUc8vCVS" target="_blank" rel="noopener"><img src="assets/images/photographs/IMG_1986.JPG" alt="Photograph by Utkarsh Bajaj"></a>
+            <a href="https://photos.google.com/album/AF1QipPl7im7h8D27Uxw9sEFoFsXOW4wX1V_eUc8vCVS" target="_blank" rel="noopener"><img src="assets/images/photographs/IMG_1878.JPG" alt="Photograph by Utkarsh Bajaj"></a>
         </div>
     </section>
 
-    <!-- Passions Section (Photography & Fitness) -->
-    <section id="passions" class="section dark-alt-bg">
-        <div class="container">
-            <div class="split-layout">
-                <!-- Photography Side -->
-                <div class="passion-block photography">
-                    <div class="block-header">
-                        <h2>Through the <span class="gradient-text-alt">Lens</span></h2>
-                        <p>Capturing the world, one frame at a time. <a
-                                href="https://photos.google.com/album/AF1QipPl7im7h8D27Uxw9sEFoFsXOW4wX1V_eUc8vCVS"
-                                target="_blank" class="text-link">View Gallery <i data-lucide="arrow-up-right"
-                                    style="width: 14px; height: 14px; display: inline;"></i></a></p>
-                    </div>
-                    <div class="photo-gallery">
-                        <div class="photo-item p1"></div>
-                        <div class="photo-item p2"></div>
-                        <div class="photo-item p3"></div>
-                        <div class="photo-item p4"></div>
-                    </div>
-                </div>
-
-                <!-- Fitness Side -->
-                <div class="passion-block fitness">
-                    <div class="block-header">
-                        <h2>Forged in <span class="gradient-text-fitness">Miles</span></h2>
-                        <p>Half Marathon Finisher: New Delhi • Toronto • San Diego • New York • Seattle</p>
-                    </div>
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-number">5</span>
-                            <span class="stat-label">Major Cities</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">21.1</span>
-                            <span class="stat-label">KM / Race</span>
-                        </div>
-                        <div class="stat-item">
-                            <a href="https://strava.app.link/wY9V4pSLNYb" target="_blank"
-                                style="text-decoration: none; color: inherit;">
-                                <span class="stat-number"><i data-lucide="activity"></i></span>
-                                <span class="stat-label">Strava</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="fitness-quote">
-                        "The only bad workout is the one that didn't happen."
-                    </div>
-                </div>
-            </div>
+    <!-- BLOCK 05: CARDIO = RUNNING (inverted) -->
+    <section id="cardio" class="invert s-cardio" data-pose="pose-run" data-tag="CARDIO · 21.1K" data-accent="#8FBF85">
+        <div class="block-label">Block 05 — Cardio · Half marathons</div>
+        <h1>The long<br><span class="acc">run</span><span class="outline">.</span></h1>
+        <p class="lede">New Delhi · Toronto · San Diego · New York · Seattle. Consistency beats intensity — in training and in engineering. <a href="https://strava.app.link/wY9V4pSLNYb" target="_blank" rel="noopener">Follow on Strava ↗</a></p>
+        <div class="stats">
+            <div class="stat"><div class="n">5</div><div class="l">Cities</div></div>
+            <div class="stat"><div class="n">21.1</div><div class="l">KM / race</div></div>
+            <div class="stat"><div class="n">105.5</div><div class="l">Race KM total</div></div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="section-header">
-                    <h2 class="section-title">Let's <span class="accent">Connect</span></h2>
-                    <p class="section-desc">Have a project in mind or want to discuss AI, photography, or training?</p>
-                </div>
-
-                <div class="contact-links">
-                    <a href="mailto:utkarshbajaj2401@gmail.com" class="contact-card">
-                        <i data-lucide="mail"></i>
-                        <span>Email Me</span>
-                    </a>
-                    <a href="https://www.linkedin.com/in/utkarsh-bajaj/" target="_blank" class="contact-card">
-                        <i data-lucide="linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="https://github.com/Ubajaj1" target="_blank" class="contact-card">
-                        <i data-lucide="github"></i>
-                        <span>GitHub</span>
-                    </a>
-                </div>
-
-                <footer class="footer">
-                    <p>&copy; 2025 Utkarsh Bajaj. Built with <i data-lucide="heart" class="heart-icon"></i> and Code.
-                    </p>
-                </footer>
-            </div>
+    <!-- BLOCK 06: COOL-DOWN = CONTACT -->
+    <section id="cooldown" data-pose="pose-stretch" data-tag="COOL-DOWN" data-accent="#0F0F0F">
+        <div class="block-label">Block 06 — Cool-down · Stretch &amp; connect</div>
+        <h1>Session<br>complete<span class="dot-ember">.</span><span class="dot-plum">.</span><span class="dot-green">.</span></h1>
+        <p class="lede">Good work today. Want to talk AI, photography, or training plans?</p>
+        <div class="cooldown-links">
+            <a href="mailto:utkarshbajaj2401@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/utkarsh-bajaj/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/Ubajaj1" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://strava.app.link/wY9V4pSLNYb" target="_blank" rel="noopener">Strava</a>
         </div>
+        <footer class="footer">© 2026 Utkarsh Bajaj — session logged.</footer>
     </section>
 
     <script src="js/script.js"></script>
-    <script>
-        lucide.createIcons();
-    </script>
 </body>
-
 </html>
