@@ -270,3 +270,41 @@ section.invert .lede { color: #a89fa3; }
 .pose-stretch .body-g { animation: stretch-body 3.2s ease-in-out infinite; }
 .pose-stretch .larm { animation: stretch-arm 3.2s ease-in-out infinite; }
 .pose-stretch .rarm { transform: rotate(-15deg); }
+
+/* ============ Responsive ============ */
+@media (max-width: 900px) {
+    .set-row { grid-template-columns: 90px 1fr 80px; }
+    .set-row .set-meta { display: none; }
+    .reps-detail { padding-left: 24px; }
+    .board-row { grid-template-columns: 1fr; gap: 6px; }
+    .chip { justify-self: start; }
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .accessory-row { grid-template-columns: 1fr 90px; }
+    .accessory-row span:nth-child(2) { display: none; }
+}
+
+@media (max-width: 700px) {
+    :root { --buddy-reserve: 24px; }
+    section { padding: 64px 24px; }
+    header.top { padding: 14px 24px; }
+    .session-meta { display: none; }
+    .index-toggle { display: block; }
+    .hud { right: 24px; top: auto; bottom: 12px; }
+
+    .buddy-track { top: auto; }
+    .buddy {
+        top: auto !important;
+        bottom: 12px; right: 12px;
+        width: 56px; padding: 4px 2px 2px;
+        position: fixed;
+    }
+    .buddy svg { width: 38px; height: 56px; }
+    .buddy .reps { font-size: 12px; height: 14px; }
+}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .buddy svg *, .buddy svg g, .chip.review { animation: none !important; }
+    .buddy { transition: none; }
+}
