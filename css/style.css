@@ -105,3 +105,85 @@ h1 .tri-under::after {
 .lede .f-ember { color: var(--ember); font-weight: 700; }
 .lede .f-plum { color: var(--plum); font-weight: 700; }
 .lede .f-green { color: var(--green); font-weight: 700; }
+
+/* ============ Strength sets ============ */
+.sets { margin-top: 48px; border-top: 2px solid var(--ink); }
+.set-row {
+    display: grid; grid-template-columns: 120px 1fr 220px 90px;
+    align-items: center; gap: 16px; width: 100%;
+    padding: 20px 0; border: none; border-bottom: 1px solid var(--ink);
+    background: none; color: inherit; font: inherit; text-align: left;
+    cursor: pointer; transition: all .2s;
+}
+.set-row:hover, .set-row:focus-visible { background: var(--accent); color: var(--paper); padding-left: 12px; }
+.set-row:hover .set-reps, .set-row:focus-visible .set-reps { color: var(--paper); }
+.set-num { font-size: 12px; font-weight: 900; letter-spacing: 1px; }
+.set-name { font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -1px; }
+.set-meta { font-size: 11px; opacity: .65; text-transform: uppercase; letter-spacing: 1px; }
+.set-reps { font-size: 11px; font-weight: 700; text-align: right; color: var(--accent); }
+
+.reps-detail { padding: 24px 0 32px 120px; border-bottom: 1px solid var(--ink); background: var(--paper-dim); }
+.reps-detail[hidden] { display: none; }
+.rep-item { display: flex; gap: 14px; font-size: 13px; padding: 7px 0; align-items: baseline; }
+.rep-item .n { font-weight: 900; font-size: 12px; min-width: 52px; color: var(--accent); }
+
+/* ============ Accessory work ============ */
+.accessory { margin-top: 64px; }
+.accessory-row {
+    display: grid; grid-template-columns: 1fr 220px 90px; gap: 16px;
+    padding: 12px 0; border-bottom: 1px solid var(--ink);
+    font-size: 13px; font-weight: 700; text-decoration: none;
+    text-transform: uppercase; letter-spacing: 1px; transition: all .2s;
+}
+.accessory-row span:nth-child(2) { opacity: .6; font-weight: 400; }
+.accessory-row span:last-child { text-align: right; }
+.accessory-row:hover { background: var(--accent); color: var(--paper); padding-left: 12px; }
+
+/* ============ Record board ============ */
+.board { margin-top: 48px; border-top: 2px solid var(--ink); }
+.board-row {
+    display: grid; grid-template-columns: 230px 1fr 170px; gap: 16px;
+    padding: 18px 0; border-bottom: 1px solid var(--ink); align-items: center;
+    text-decoration: none; transition: background .2s;
+}
+.board-row:hover { background: var(--paper-dim); }
+.b-event { font-weight: 900; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
+.b-entry { font-size: 13px; opacity: .8; }
+.chip {
+    justify-self: end; font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 6px 12px; border: 2px solid var(--accent); text-align: center;
+}
+.chip.done { background: var(--accent); color: var(--paper); }
+.chip.review { color: var(--accent); animation: chip-pulse 2s ease-in-out infinite; }
+.chip.up { border-style: dashed; color: var(--ink); }
+@keyframes chip-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+
+/* ============ Photo grid ============ */
+.photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 48px; }
+.photo-grid a {
+    display: block; aspect-ratio: 3 / 4; border: 1px solid var(--ink);
+    overflow: hidden; transition: all .2s;
+}
+.photo-grid a:hover { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+.photo-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ============ Inverted (cardio) ============ */
+section.invert { background: var(--ink); color: var(--paper); }
+section.invert h1 .outline { -webkit-text-stroke: 2px var(--paper); }
+section.invert h1 .acc { color: var(--green-light); }
+section.invert .block-label { background: var(--paper); color: var(--ink); }
+section.invert .lede { color: #a89fa3; }
+
+.stats { display: flex; gap: 60px; margin-top: 48px; flex-wrap: wrap; }
+.stat .n { font-size: 64px; font-weight: 900; letter-spacing: -3px; color: var(--green-light); }
+.stat .l { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; opacity: .6; }
+
+/* ============ Cool-down ============ */
+.cooldown-links { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+.cooldown-links a {
+    border: 2px solid var(--ink); padding: 14px 28px; font-size: 12px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all .2s;
+}
+.cooldown-links a:hover { background: var(--ink); color: var(--paper); }
+
+.footer { margin-top: 60px; font-size: 11px; opacity: .6; letter-spacing: 1px; text-transform: uppercase; }
